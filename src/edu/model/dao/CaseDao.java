@@ -64,16 +64,18 @@ public class CaseDao extends GenericDao implements Dao {
 				_case = new Case();
 				_case.setId((Double)vRowTemp.elementAt(0));
 				_case.setName((String)vRowTemp.elementAt(1));
-				_case.setKeywords((String)vRowTemp.elementAt(5));
+				_case.setKeywords((String)vRowTemp.elementAt(6));
+				_case.setDescription((String)vRowTemp.elementAt(2));
+				//description
 				
 				//search Diagnosis by case
-				Diagnosis diagnosis = (Diagnosis) getComponentCase("edu.model.dao.DiagnosisDao",(Double)vRowTemp.elementAt(2));
+				Diagnosis diagnosis = (Diagnosis) getComponentCase("edu.model.dao.DiagnosisDao",(Double)vRowTemp.elementAt(3));
 				_case.setDiagnosis(diagnosis);
 				//search Forecast by case
-				Forecast forecast = (Forecast) getComponentCase("edu.model.dao.ForecastDao",(Double)vRowTemp.elementAt(3));
+				Forecast forecast = (Forecast) getComponentCase("edu.model.dao.ForecastDao",(Double)vRowTemp.elementAt(4));
 				_case.setForecast(forecast);
 				//search Treatment by case
-				Treatment treatment = (Treatment) getComponentCase("edu.model.dao.TreatmentDao",(Double)vRowTemp.elementAt(4));
+				Treatment treatment = (Treatment) getComponentCase("edu.model.dao.TreatmentDao",(Double)vRowTemp.elementAt(5));
 				_case.setTreatment(treatment);				
 				//add fields list
 				_case.setAnalysisList(getListComponentCase("edu.model.dao.AnalysisDao",_case.getId()));
