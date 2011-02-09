@@ -6,6 +6,7 @@ import java.util.List;
 public class Case implements Bean {
 	private Double id;
 	private String name;
+	private String description;
 	private Diagnosis diagnosis;
 	private Forecast forecast;
 	private Treatment treatment;
@@ -125,5 +126,11 @@ public class Case implements Bean {
 	}
 	public List<Bean> getPhysicalExaminationList() {
 		return physicalExaminationList;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getDescription() {
+		return description;
 	}
 }

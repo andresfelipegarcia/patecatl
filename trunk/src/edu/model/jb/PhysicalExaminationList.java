@@ -31,10 +31,15 @@ public class PhysicalExaminationList implements ListComparator{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
+	
 	public List<ListComparator> setListToComparate() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public void setListToComparate(List<Bean> bean) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
