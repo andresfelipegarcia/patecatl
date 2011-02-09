@@ -21,7 +21,7 @@ public class SearchIndicesList implements ListComparator {
 		this.searchIndicesList = searchIndicesList;
 	}
 	@Override
-	public List<ListComparator> getListToComparate() {
+	public List<Bean> getListToComparate() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -30,9 +30,14 @@ public class SearchIndicesList implements ListComparator {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
+	
 	public List<ListComparator> setListToComparate() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public void setListToComparate(List<Bean> bean) {
+		// TODO Auto-generated method stub
+		
 	}
 }
