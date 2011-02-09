@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.edu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.edu" xmlns:intf="http://services.edu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.edu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getDescription">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDescriptionResponse">
+    <complexType>
+     <sequence>
+      <element name="getDescriptionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRecomendedAnalisys">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRecomendedAnalisysResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getRecomendedAnalisysReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getVitalSigns">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getVitalSignsResponse">
+    <complexType>
+     <sequence>
+      <element name="getVitalSignsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getDescriptionResponse">
+
+      <wsdl:part element="impl:getDescriptionResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getVitalSignsRequest">
+
+      <wsdl:part element="impl:getVitalSigns" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRecomendedAnalisysRequest">
+
+      <wsdl:part element="impl:getRecomendedAnalisys" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDescriptionRequest">
+
+      <wsdl:part element="impl:getDescription" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getVitalSignsResponse">
+
+      <wsdl:part element="impl:getVitalSignsResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRecomendedAnalisysResponse">
+
+      <wsdl:part element="impl:getRecomendedAnalisysResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServicesV1">
+
+      <wsdl:operation name="getDescription">
+
+         <wsdl:input message="impl:getDescriptionRequest" name="getDescriptionRequest"/>
+
+         <wsdl:output message="impl:getDescriptionResponse" name="getDescriptionResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRecomendedAnalisys">
+
+         <wsdl:input message="impl:getRecomendedAnalisysRequest" name="getRecomendedAnalisysRequest"/>
+
+         <wsdl:output message="impl:getRecomendedAnalisysResponse" name="getRecomendedAnalisysResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getVitalSigns">
+
+         <wsdl:input message="impl:getVitalSignsRequest" name="getVitalSignsRequest"/>
+
+         <wsdl:output message="impl:getVitalSignsResponse" name="getVitalSignsResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServicesV1SoapBinding" type="impl:ServicesV1">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getDescription">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDescriptionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDescriptionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRecomendedAnalisys">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRecomendedAnalisysRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRecomendedAnalisysResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getVitalSigns">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getVitalSignsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getVitalSignsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServicesV1Service">
+
+      <wsdl:port binding="impl:ServicesV1SoapBinding" name="ServicesV1">
+
+         <wsdlsoap:address location="http://localhost:8080/patecatl/services/ServicesV1"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

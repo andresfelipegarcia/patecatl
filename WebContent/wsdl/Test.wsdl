@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://test.edu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://test.edu" xmlns:intf="http://test.edu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://test.edu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getRecomendedAnalisysReturn" type="impl:ArrayOf_xsd_anyType"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getRecomendedAnalisysResponse">
+
+      <wsdl:part element="impl:getRecomendedAnalisysReturn" name="getRecomendedAnalisysReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRecomendedAnalisysRequest">
+
+   </wsdl:message>
+
+   <wsdl:portType name="Test">
+
+      <wsdl:operation name="getRecomendedAnalisys">
+
+         <wsdl:input message="impl:getRecomendedAnalisysRequest" name="getRecomendedAnalisysRequest"/>
+
+         <wsdl:output message="impl:getRecomendedAnalisysResponse" name="getRecomendedAnalisysResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TestSoapBinding" type="impl:Test">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getRecomendedAnalisys">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRecomendedAnalisysRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRecomendedAnalisysResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TestService">
+
+      <wsdl:port binding="impl:TestSoapBinding" name="Test">
+
+         <wsdlsoap:address location="http://localhost:8080/patecatl/services/Test"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
