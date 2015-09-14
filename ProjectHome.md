@@ -1,0 +1,1 @@
+este simualdor utiliza un CBR implementado con la libreria de jColibri para recuperar casos clinicos similares al que el medico esta resolviendo y asi le muestre los resultados optimos o correctos de como resolverlo
